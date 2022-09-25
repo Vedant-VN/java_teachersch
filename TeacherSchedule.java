@@ -32,13 +32,13 @@ class TeacherSchedule
 		teacherName.add("Himanshu Pokhle");
 		teacherName.add("Amit Mule");
 
-		teacherQualification.add("MBBS");
-		teacherQualification.add("Er, MBBS");
-		teacherQualification.add("MBBS, MD");
-		teacherQualification.add("MBBS,MD");
-		teacherQualification.add("BAMS");
-		teacherQualification.add("MBBS, MD, Surgeon");
-		teacherQualification.add("BAMS");
+		teacherQualification.add("M.ED");
+		teacherQualification.add("M.ED");
+		teacherQualification.add("B.ED, M.ED");
+		teacherQualification.add("MSC Biology");
+		teacherQualification.add("MSC Biology");
+		teacherQualification.add("M.ED, B,ED");
+		teacherQualification.add("B.Tech");
 
 		teacherSubject.add("Physics");
 		teacherSubject.add("Chemistry");
@@ -292,7 +292,7 @@ class TeacherSchedule
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 		System.out.println("\t\t  _________________________");
 		System.out.println("\t\t |                         |");
-		System.out.println("\t\t |         Login 		   |");
+		System.out.println("\t\t |         Login           |");
 		System.out.println("\t\t |_________________________|");
 
 		System.out.println("Enter your Mobile Number");
@@ -502,7 +502,7 @@ class TeacherSchedule
 								System.out.println("Enter password");
 								teacherPassword.add(sc.next());
 								System.out.println("Registration is Successfull.");
-								System.out.println("Details: Name: "+doctorName+" number:"+teacherMobileNumber);
+								System.out.println("Details: Name: "+teacherName+" number:"+teacherMobileNumber);
 								Thread.sleep(900);
 
 					}
@@ -608,7 +608,7 @@ class TeacherSchedule
 			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 		
 			System.out.println("---------------------------------------------------------------------");
-			System.out.println("\t\t              | Welcome to Teacher Enrollment |");
+			System.out.println("\t\t              | Welcome to Teacher Enrollment |                  ");
 			System.out.println("----------------------------------------------------------------------\n\n");
 				System.out.println("\n1. Teacher \t 2. Student \t 3. Admin \t 4. Exit");
 			int choice=sc.nextInt();
