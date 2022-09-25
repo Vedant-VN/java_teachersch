@@ -95,14 +95,14 @@ class TeacherSchedule
 			System.out.println("\t\t |                         |");
 			System.out.println("\t\t |       Welcome Admin     |");
 			System.out.println("\t\t |_________________________|");
-			System.out.print("\n\n1. Teacher's list \t2. Registered Patients \t3.Pateints with Appointment  \n\nEnter Your Choice.");
+			System.out.print("\n\n1. Teacher's list \t2. Registered Students \t3.Student's Who Enrolled  \n\nEnter Your Choice.");
 			choice=sc.nextByte();
 			switch(choice)
 			{
 			case 1:
-				for(int i=0; i<=doctorName.size()-1; i++)
+				for(int i=0; i<=teacherName.size()-1; i++)
 				{
-					System.out.println("Name: \t "+doctorName.get(i));
+					System.out.println("Name: \t "+teacherName.get(i));
 				
 				}
 				byte menuCHoice;
@@ -121,7 +121,7 @@ class TeacherSchedule
 				break;
 
 			case 2:
-					if(patientName.isEmpty())
+					if(studentName.isEmpty())
 					{
 						System.out.println("No Registered Patients yet.");
 						Thread.sleep(3000);
@@ -129,9 +129,9 @@ class TeacherSchedule
 					}
 					else 
 					{
-						for(int i=0; i<=patientName.size()-1; i++)
+						for(int i=0; i<=studentName.size()-1; i++)
 						{
-							System.out.println(i+". "+patientName.get(i));
+							System.out.println(i+". "+studentName.get(i));
 						}
 
 						System.out.println("\n\n1. Main menu\t 2. Previous menu");
@@ -150,7 +150,7 @@ class TeacherSchedule
 					break;
 				
 			case 3:
-				if(patientNameBooking.isEmpty())
+				if(studentNameBooking.isEmpty())
 				{
 					System.out.println("\nNo Appointments yet.");
 					Thread.sleep(3000);
@@ -159,9 +159,9 @@ class TeacherSchedule
 				
 				else
 				{
-					for(int i=0; i<=patientNameBooking.size()-1; i++)
+					for(int i=0; i<=studentNameBooking.size()-1; i++)
 					{
-						System.out.println(i+". "+patientNameBooking.get(i));
+						System.out.println(i+". "+studentNameBooking.get(i));
 					}
 
 					Thread.sleep(5000);
@@ -189,7 +189,7 @@ class TeacherSchedule
 			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 			System.out.println("\t\t  _________________________");
 			System.out.println("\t\t |                         |");
-			System.out.println("\t\t | Welcome to Patient Page!|");
+			System.out.println("\t\t | Welcome to Student Page!|");
 			System.out.println("\t\t |_________________________|");
 			System.out.println(" ");
 			System.out.println("1.Login \t 2.Registration\n");
@@ -197,7 +197,7 @@ class TeacherSchedule
 			switch(ch)
 			{
 				case 1:
-					if(patientMobileNumber.isEmpty())
+					if(studentMobileNumber.isEmpty())
 					{
 						System.out.println("First register yourself then login..!");
 						Thread.sleep(500);
@@ -205,14 +205,14 @@ class TeacherSchedule
 					}
 					else
 					{
-						patientLogin();
+						studentLogin();
 						flag=false;
 						
 					}
 					
 					break;
 				case 2:
-					patientRegistration();
+					studentRegistration();
 					flag=false;
 					break;
 				
@@ -227,7 +227,7 @@ class TeacherSchedule
 	}
 
 
-	void doctor() throws Exception
+	void teacher() throws Exception
 	{
 		
 		
@@ -240,10 +240,10 @@ class TeacherSchedule
 			//Thread.sleep(1000);
 			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-			System.out.println("\t\t  _________________________");
-			System.out.println("\t\t |                         |");
-			System.out.println("\t\t | Welcome to Doctor Page! |");
-			System.out.println("\t\t |_________________________|");
+			System.out.println("\t\t  __________________________");
+			System.out.println("\t\t |                          |");
+			System.out.println("\t\t | Welcome to Teacher Page! |");
+			System.out.println("\t\t |__________________________|");
 			System.out.println(" ");
 			
 
@@ -253,7 +253,7 @@ class TeacherSchedule
 			switch(choice)
 			{
 			case 1:
-				if(doctorMobileNumber.isEmpty())
+				if(teacherMobileNumber.isEmpty())
 				{
 					System.out.println("Register first...!");
 					flag=false;
@@ -263,13 +263,13 @@ class TeacherSchedule
 				}
 				else
 				{
-					doctorLogin();
+					teacherLogin();
 					flag=false;
 				}
 
 				break;
 			case 2:
-				doctorRegistration();
+				teacherRegistration();
 				flag= false;
 				break;
 
@@ -282,7 +282,7 @@ class TeacherSchedule
 	}
 	
 
-	void patientLogin()throws Exception
+	void studentLogin()throws Exception
 	{
 
 		Scanner sc=new Scanner(System.in);
@@ -295,7 +295,7 @@ class TeacherSchedule
 		System.out.println("\t\t |         Login 		   |");
 		System.out.println("\t\t |_________________________|");
 
-		System.out.println("Enter your Username(mobilenumber)");
+		System.out.println("Enter your Mobile Number");
 		mobileNumber=sc.nextLong();
 		System.out.println("Enter your Password");
 		String password=sc.next();
@@ -303,10 +303,10 @@ class TeacherSchedule
  		
  		boolean flag1=false;
  		int j;
-		for(j=0; j<=patientMobileNumber.size()-1;j++)
+		for(j=0; j<=studentMobileNumber.size()-1;j++)
 		{
 			
-			if((patientMobileNumber.get(j)).equals(mobileNumber)&&(patientPassword.get(j)).equals(password))
+			if((studentMobileNumber.get(j)).equals(mobileNumber)&&(studentPassword.get(j)).equals(password))
 			{
 				flag1=true;
 
@@ -320,16 +320,16 @@ class TeacherSchedule
 			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 				System.out.println("\t\t  _________________________");
 				System.out.println("\t\t |                         |");
-				System.out.println("\t\t |     Book Appointment    |");
+				System.out.println("\t\t |     Enroll Yourself     |");
 				System.out.println("\t\t |_________________________|");
-			System.out.println("\n Welcome "+patientName.get(j)+", to book appointment, choose your doctor..");
+			System.out.println("\n Welcome "+studentName.get(j)+", to Enroll For Your Respective Class, Please Choose your Teacher..");
 			
-			for(int i=0; i<=doctorName.size()-1; i++)
+			for(int i=0; i<=teacherName.size()-1; i++)
 			{
-				System.out.println((i+1)+". "+doctorName.get(i));
+				System.out.println((i+1)+". "+teacherName.get(i));
 			}
 			choice=sc.nextByte();
-			doctorID.add(choice);
+			teacherID.add(choice);
 			
 
 			
@@ -340,22 +340,22 @@ class TeacherSchedule
 				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 				System.out.println("\t\t  _________________________");
 				System.out.println("\t\t |                         |");
-				System.out.println("\t\t |     Book Appointment    |");
+				System.out.println("\t\t |     Enroll Yourself     |");
 				System.out.println("\t\t |_________________________|");
 				
 				
-				//for(int i=0; i<=doctorName.size()-1;i++)
+				//for(int i=0; i<=teacherName.size()-1;i++)
 				//{
-					if(choice<=doctorName.size() && choice>0)
+					if(choice<=teacherName.size() && choice>0)
 					{
-						System.out.println("\n\nName: \t "+doctorName.get(choice-1)+"\nAge: \t "+doctorAge.get(choice-1)+"\nMobile:  "+doctorMobileNumber.get(choice-1)+"\nCity: \t "+doctorCity.get(choice-1));
+						System.out.println("\n\nName: \t "+teacherName.get(choice-1)+"\nAge: \t "+teacherAge.get(choice-1)+"\nMobile:  "+teacherMobileNumber.get(choice-1)+"\nCity: \t "+teacherCity.get(choice-1));
 						System.out.println("\n Enter your name: \t");
 						sc.nextLine();
-						patientNameBooking.add(sc.nextLine());
+						studentNameBooking.add(sc.nextLine());
 						System.out.println(" Enter your age: \t");
-						patientAgeBooking.add(sc.nextInt());
+						studentAgeBooking.add(sc.nextInt());
 						System.out.println(" Enter your gender: \t");
-						patientGenderBooking.add(sc.next());
+						studentGenderBooking.add(sc.next());
 
 						System.out.println("\n Booking Successfull..");
 
@@ -383,30 +383,30 @@ class TeacherSchedule
 		}
 	}
 
-	void patientRegistration() throws Exception
+	void studentRegistration() throws Exception
 	{
 		Scanner sc=new Scanner(System.in);
 		int i=0;
 		long mobileNumber;
 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 		System.out.println("\n");
-		System.out.println("\t\t | Welcome to Patient Registration Page!|");
+		System.out.println("\t\t | Welcome to Student Enrollment Registration Page!|");
 		System.out.println("\n");
 		System.out.println("Please enter your name");
-		patientName.add(sc.nextLine());
+		studentName.add(sc.nextLine());
 		System.out.println("enter your age: ");
-		patientAge.add(sc.nextInt());
+		studentAge.add(sc.nextInt());
 		System.out.println("Please enter your Mobile number");
 		mobileNumber=sc.nextLong();
 		long mno;
 		
 		boolean flag=true, flag1=true;
 		
-		if(patientMobileNumber.isEmpty())
+		if(studentMobileNumber.isEmpty())
 		{
-			patientMobileNumber.add((mobileNumber));
+			studentMobileNumber.add((mobileNumber));
 			System.out.println("Enter password");
-			patientPassword.add(sc.next());
+			studentPassword.add(sc.next());
 			System.out.println("Registration is Successfull.");
 			
 			Thread.sleep(900);
@@ -415,9 +415,9 @@ class TeacherSchedule
 		}
 		else 
 		{
-			for(i=0;i<=patientMobileNumber.size()-1;i++)
+			for(i=0;i<=studentMobileNumber.size()-1;i++)
 			{
-				mno=patientMobileNumber.get(i);
+				mno=studentMobileNumber.get(i);
 				
 				if(mno==mobileNumber)
 				{
@@ -429,9 +429,9 @@ class TeacherSchedule
 			}
 			if(flag1==true)
 			{
-			patientMobileNumber.add(mobileNumber);
+			studentMobileNumber.add(mobileNumber);
 			System.out.println("Enter password");
-			patientPassword.add(sc.next());
+			studentPassword.add(sc.next());
 			System.out.println("Registration is Successfull.");
 			Thread.sleep(900);
 			}
@@ -444,7 +444,7 @@ class TeacherSchedule
 	}
 	
 
-	void doctorRegistration() throws Exception
+	void teacherRegistration() throws Exception
 	{
 		Scanner sc=new Scanner(System.in);
 		int i=0;
@@ -453,24 +453,24 @@ class TeacherSchedule
 					
 			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-			System.out.println("\t\t ----------------------------------");
-			System.out.println("\t\t| This is doctor registration Page |");
-			System.out.println("\t\t ----------------------------------");
+			System.out.println("\t\t ------------------------------------");
+			System.out.println("\t\t| This is Teacher registration Page |");
+			System.out.println("\t\t ------------------------------------");
 			System.out.println("\n");
 			
 			System.out.println("Please enter your name");
-			doctorName.add(sc.nextLine());
+			teacherName.add(sc.nextLine());
 
 			System.out.println("Please enter your Mobile number");
 			mobileNumber=(sc.nextLong());
 			
 			long mno;
 
-				if(doctorMobileNumber.isEmpty())
+				if(teacherMobileNumber.isEmpty())
 					{
-						doctorMobileNumber.add((mobileNumber));
+						teacherMobileNumber.add((mobileNumber));
 						System.out.println("Enter password");
-							doctorPassword.add(sc.next());
+							teacherPassword.add(sc.next());
 							System.out.println("Registration is Successfull.");
 							Thread.sleep(900);
 							flag1=false;
@@ -479,9 +479,9 @@ class TeacherSchedule
 					}
 				else 
 				{
-					for(i=0;i<=doctorMobileNumber.size()-1;i++)
+					for(i=0;i<=teacherMobileNumber.size()-1;i++)
 					{
-						mno=doctorMobileNumber.get(i);
+						mno=teacherMobileNumber.get(i);
 						
 						if(mno==mobileNumber)
 						{
@@ -494,22 +494,22 @@ class TeacherSchedule
 					if(flag1==true)
 					{
 
-								doctorMobileNumber.add(mobileNumber);
+								teacherMobileNumber.add(mobileNumber);
 								System.out.println("Enter age:");
-								doctorAge.add(sc.nextInt());
+								teacherAge.add(sc.nextInt());
 								System.out.println("Enter City: ");
-								doctorCity.add(sc.next());
+								teacherCity.add(sc.next());
 								System.out.println("Enter password");
-								doctorPassword.add(sc.next());
+								teacherPassword.add(sc.next());
 								System.out.println("Registration is Successfull.");
-								System.out.println("Details: Name: "+doctorName+" number:"+doctorMobileNumber);
+								System.out.println("Details: Name: "+doctorName+" number:"+teacherMobileNumber);
 								Thread.sleep(900);
 
 					}
 					else {
 						System.out.println("same mobile numebr is not allowed\n");
-						int index=doctorName.size()-1;
-						doctorName.remove(index);
+						int index=teacherName.size()-1;
+						teacherName.remove(index);
 						Thread.sleep(500);
 
 					}
@@ -517,7 +517,7 @@ class TeacherSchedule
 				}
 	}
 
-	void doctorLogin() throws Exception
+	void teacherLogin() throws Exception
 	{
 		Scanner sc=new Scanner(System.in);
 		Long mobileNumber;
