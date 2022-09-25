@@ -123,7 +123,7 @@ class TeacherSchedule
 			case 2:
 					if(studentName.isEmpty())
 					{
-						System.out.println("No Registered Patients yet.");
+						System.out.println("No Registered Student's yet.");
 						Thread.sleep(3000);
 						break;
 					}
@@ -180,7 +180,7 @@ class TeacherSchedule
 		
 	}
 
-	void patient() throws Exception
+	void student() throws Exception
 	{
 		Scanner sc=new Scanner(System.in);
 		boolean flag=true;
