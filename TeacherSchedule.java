@@ -2,83 +2,83 @@ import java.util.*;
 import java.io.*;
 class TeacherSchedule
 {
-	ArrayList<String> doctorName=new ArrayList<String>();
-	ArrayList<String> doctorQualification=new ArrayList<String>();
-	ArrayList<String> doctorGender=new ArrayList<String>();
-	ArrayList<String> doctorPassword=new ArrayList<String>();
-	ArrayList<Integer> doctorAge=new ArrayList<Integer>();
-	ArrayList<Long> doctorMobileNumber=new ArrayList<Long>();
-	ArrayList<String> doctorCity=new ArrayList<String>();
+	ArrayList<String> teacherName=new ArrayList<String>();
+	ArrayList<String> teacherQualification=new ArrayList<String>();
+	ArrayList<String> teacherSubject=new ArrayList<String>();
+	ArrayList<String> teacherPassword=new ArrayList<String>();
+	ArrayList<Integer> teacherAge=new ArrayList<Integer>();
+	ArrayList<Long> teacherMobileNumber=new ArrayList<Long>();
+	ArrayList<String> teacherCity=new ArrayList<String>();
 
-	ArrayList<Integer> patientAge=new ArrayList<Integer>();
-	ArrayList<String> patientName=new ArrayList<String>();
-	ArrayList<String> patientGender=new ArrayList<String>();
-	ArrayList<String> patientPassword=new ArrayList<String>();
-	ArrayList<String> patientConfirmPassword=new ArrayList<String>();
-	ArrayList<Long> patientMobileNumber=new ArrayList<Long>();
+	ArrayList<Integer> studentAge=new ArrayList<Integer>();
+	ArrayList<String> studentName=new ArrayList<String>();
+	ArrayList<String> studentGender=new ArrayList<String>();
+	ArrayList<String> studentPassword=new ArrayList<String>();
+	ArrayList<String> studentConfirmPassword=new ArrayList<String>();
+	ArrayList<Long> studentMobileNumber=new ArrayList<Long>();
 
-	ArrayList<Integer> patientAgeBooking=new ArrayList<Integer>();
-	ArrayList<String> patientNameBooking=new ArrayList<String>();
-	ArrayList<String> patientGenderBooking=new ArrayList<String>();
-	ArrayList<Byte> doctorID=new ArrayList<Byte>();
+	ArrayList<Integer> studentAgeBooking=new ArrayList<Integer>();
+	ArrayList<String> studentNameBooking=new ArrayList<String>();
+	ArrayList<String> studentGenderBooking=new ArrayList<String>();
+	ArrayList<Byte> teacherID=new ArrayList<Byte>();
 
 	void dataAdd()		//method for creating Default docotr list present in the database.
 	{
-		doctorName.add("Nagarjun Raut");
-		doctorName.add("Ankush Nag");
-		doctorName.add("Prashant Jha");
-		doctorName.add("Ashish Gadpayle");
-		doctorName.add("Sandip Paul");
-		doctorName.add("Himanshu Pokhle");
-		doctorName.add("Amit Mule");
+		teacherName.add("Nagarjun Raut");
+		teacherName.add("Ankush Nag");
+		teacherName.add("Prashant Jha");
+		teacherName.add("Ashish Gadpayle");
+		teacherName.add("Sandip Paul");
+		teacherName.add("Himanshu Pokhle");
+		teacherName.add("Amit Mule");
 
-		doctorQualification.add("MBBS");
-		doctorQualification.add("Er, MBBS");
-		doctorQualification.add("MBBS, MD");
-		doctorQualification.add("MBBS,MD");
-		doctorQualification.add("BAMS");
-		doctorQualification.add("MBBS, MD, Surgeon");
-		doctorQualification.add("BAMS");
+		teacherQualification.add("MBBS");
+		teacherQualification.add("Er, MBBS");
+		teacherQualification.add("MBBS, MD");
+		teacherQualification.add("MBBS,MD");
+		teacherQualification.add("BAMS");
+		teacherQualification.add("MBBS, MD, Surgeon");
+		teacherQualification.add("BAMS");
 
-		doctorGender.add("M");
-		doctorGender.add("M");
-		doctorGender.add("M");
-		doctorGender.add("M");
-		doctorGender.add("M");
-		doctorGender.add("M");
-		doctorGender.add("M");
+		teacherSubject.add("Physics");
+		teacherSubject.add("Chemistry");
+		teacherSubject.add("Mathematics");
+		teacherSubject.add("Biology");
+		teacherSubject.add("Zoology");
+		teacherSubject.add("Literature");
+		teacherSubject.add("Computer Programming");
 
-		doctorPassword.add("Nagarjun123");
-		doctorPassword.add("Ankush123");
-		doctorPassword.add("Prashant123");
-		doctorPassword.add("Ashish123");
-		doctorPassword.add("Sandip123");
-		doctorPassword.add("Himanshu123");
-		doctorPassword.add("Amit123");
+		teacherPassword.add("Nagarjun123");
+		teacherPassword.add("Ankush123");
+		teacherPassword.add("Prashant123");
+		teacherPassword.add("Ashish123");
+		teacherPassword.add("Sandip123");
+		teacherPassword.add("Himanshu123");
+		teacherPassword.add("Amit123");
 
-		doctorAge.add(25);
-		doctorAge.add(24);
-		doctorAge.add(29);
-		doctorAge.add(29);
-		doctorAge.add(28);
-		doctorAge.add(23);
-		doctorAge.add(30);
+		teacherAge.add(25);
+		teacherAge.add(24);
+		teacherAge.add(29);
+		teacherAge.add(29);
+		teacherAge.add(28);
+		teacherAge.add(23);
+		teacherAge.add(30);
 
-		doctorMobileNumber.add(9422887565l);
-		doctorMobileNumber.add(123l);
-		doctorMobileNumber.add(123l);
-		doctorMobileNumber.add(123l);
-		doctorMobileNumber.add(123l);
-		doctorMobileNumber.add(123l);
-		doctorMobileNumber.add(123l);
+		teacherMobileNumber.add(9422887565l);
+		teacherMobileNumber.add(123l);
+		teacherMobileNumber.add(123l);
+		teacherMobileNumber.add(123l);
+		teacherMobileNumber.add(123l);
+		teacherMobileNumber.add(123l);
+		teacherMobileNumber.add(123l);
 
-		doctorCity.add("Gondiya");
-		doctorCity.add("Ranchi");
-		doctorCity.add("Nagpur");
-		doctorCity.add("Nagpur");
-		doctorCity.add("Mumbai");
-		doctorCity.add("Delhi");
-		doctorCity.add("Chennai");
+		teacherCity.add("Gondiya");
+		teacherCity.add("Ranchi");
+		teacherCity.add("Nagpur");
+		teacherCity.add("Nagpur");
+		teacherCity.add("Mumbai");
+		teacherCity.add("Delhi");
+		teacherCity.add("Chennai");
 
 	}
 
@@ -95,7 +95,7 @@ class TeacherSchedule
 			System.out.println("\t\t |                         |");
 			System.out.println("\t\t |       Welcome Admin     |");
 			System.out.println("\t\t |_________________________|");
-			System.out.print("\n\n1. Doctor list \t2. Registered Patients \t3.Pateints with Appointment  \n\nEnter Your Choice.");
+			System.out.print("\n\n1. Teacher's list \t2. Registered Patients \t3.Pateints with Appointment  \n\nEnter Your Choice.");
 			choice=sc.nextByte();
 			switch(choice)
 			{
